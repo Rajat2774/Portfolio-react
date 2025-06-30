@@ -5,11 +5,17 @@ import Currency from "../assets/currency.png";
 import Todo from "../assets/todo.png";
 import Ovs from "../assets/ovs.jpg";
 import Amazon from "../assets/amazon.png";
+import Book from "../assets/Book.png"
 
-export const HERO=`Hi, I’m Rajat Singh, a B.Sc. (Hons.) Computer Science student, set to graduate in 2026. With skills in C++, Python, Java, and web development using ReactJS, Django, and Flask, I create dynamic and user-friendly applications. My design expertise with Figma and Canva adds a creative touch to my projects.
-
-Explore my work to see how I turn ideas into impactful solutions. Let’s connect and create something great together!`
-export const ABOUT=`Hi, I’m Rajat Singh, a B.Sc. (Hons.) Computer Science student, set to graduate in 2026, with a passion for building impactful technological solutions. I am proficient in programming languages like C++, Python, and Java, backed by a solid foundation in Data Structures and Algorithms (C++). My development expertise spans web technologies such as HTML, CSS, JavaScript, ReactJS, Django, and Flask, enabling me to craft innovative, efficient, and user-friendly applications. Creativity plays a significant role in my work, with experience in design tools like Figma and Canva to ensure visually appealing and functional interfaces. I’m constantly exploring new technologies and approaches, driven by the desire to learn, grow, and solve real-world challenges. Whether it’s coding, designing, or collaborating on impactful projects, I’m excited about making meaningful contributions to the tech world. Let’s connect and create something extraordinary together! `;
+export const HERO=`Passionate about AI, Machine Learning, and Data Science, I’m a B.Sc. (Hons.) Computer Science student graduating in 2026, skilled in Python, C++, and Java with a strong foundation in Data Structures and Algorithms.
+I build scalable, user-focused solutions using full-stack web technologies like ReactJS, Django, Flask, HTML, CSS, and JavaScript, and blend technical expertise with creativity through design tools like Figma and Canva.
+Curious, growth-minded, and driven by real-world impact — I love transforming ideas into intelligent, beautifully designed products.
+🚀 Let’s connect and create something extraordinary together!`
+export const ABOUT=`Hi, I’m Rajat Singh — a B.Sc. (Hons.) Computer Science student set to graduate in 2026, with a deep passion for Artificial Intelligence, Machine Learning, and Data Science. I love using technology to build solutions that are not only intelligent but also impactful and user-friendly.
+With strong expertise in Python, C++, and Java, and a solid foundation in Data Structures and Algorithms, I enjoy solving complex problems and turning ideas into reality. My development skills span both backend and frontend, including ReactJS, Django, Flask, HTML, CSS, and JavaScript, allowing me to create full-stack applications that are robust, efficient, and beautifully crafted.
+Beyond code, I bring a creative edge to my work through design tools like Figma and Canva, ensuring that every product I build looks as good as it performs. I believe in blending logic with creativity to create experiences that truly stand out.
+I’m always exploring new technologies, learning continuously, and seeking opportunities to work on projects that make a difference.
+🚀 Let’s collaborate and create something extraordinary together!`;
 export const EXPERIENCES=[
     {
         year:"2024 - Present",
@@ -28,6 +34,17 @@ export const EXPERIENCES=[
 ];
 
 export const PROJECTS=[
+    {
+        title:"Book Recommender System",
+        image:Book,
+        description:`Welcome to our Book Recommendation Platform – a user-friendly system built to help readers discover great books effortlessly.Displays the Top 50 most popular books, ranked by average rating.Popularity is derived from the Book Recommendation Dataset on Kaggle, combining user ratings to highlight the most loved titles.
+                    Search-Based Personalized Recommendations:
+                    Enter the title of a book you like.
+                    The platform uses Collaborative Filtering to recommend 8 similar books.
+                    Behind the scenes, it calculates the Euclidean distance between the selected book and all others based on user ratings.
+                    The 8 most similar titles (with the shortest distances) are returned as recommendations.Welcome`,
+        technologies:["Machine Leanring", "Scikit-Learn","Python","Pandas","Matplotlib","Numpy","Kaggle"],
+    },
     {
         title:"Portfolio Website",
         image:Portfolio,
@@ -50,12 +67,6 @@ export const PROJECTS=[
         title:"Weather App",
         image:Weather,
         description:"A weather app built using React provides real-time weather updates by fetching data from APIs. It features a responsive interface where users can search for locations and view current weather conditions, forecasts, and temperature details, ensuring an engaging and dynamic user experience.",
-        technologies:["ReactJs"],
-    },
-    {
-        title:"To-Do List",
-        image:Todo,
-        description:"A to-do list application created with React offers users a simple and interactive way to manage tasks. Users can add, edit, delete, and mark tasks as completed, with real-time updates and a clean, intuitive design that enhances productivity and organization.",
         technologies:["ReactJs"],
     },
     {
