@@ -1,4 +1,4 @@
-import pp from "../assets/pp.jpg"
+import about from "../assets/about.jpg"
 import { HERO } from '../constants';
 import { motion } from "motion/react"
 
@@ -41,7 +41,7 @@ const Hero = () => {
                     initial={{x:100,opacity:0}} 
                     animate={{x:0,opacity:1}} 
                     transition={{duration:1,delay:1.2}}
-                    src={pp} alt="Profile Picture" 
+                    src={about} alt="Profile Picture" 
                     className="w-72 h-72 object-cover rounded-md"/>
                 </div>
             </div>
