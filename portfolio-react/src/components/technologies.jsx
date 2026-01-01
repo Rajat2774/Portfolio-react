@@ -26,7 +26,7 @@ import Kubernetes from "../assets/Kubernetes.png";
 import Prometheus from "../assets/Prometheus.png";
 import Langchain from "../assets/Langchain.jpeg";
 import Docker from "../assets/Docker.png";
-import Tensorflow from "../assets/Tensorflow.png";
+import Tensorflow from "../assets/TensorFlow.png";
 
 
 const iconVariants = (duration) => ({
