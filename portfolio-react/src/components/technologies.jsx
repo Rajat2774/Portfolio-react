@@ -16,6 +16,18 @@ import CSS from "../assets/CSS3.png";
 import mat from "../assets/Matplotlib.png";
 import stream from "../assets/Streamlit.png";
 import flask from "../assets/Flask.png";
+import dvc from "../assets/dvc.png";
+import mlflow from "../assets/mlflow.jpeg";
+import groq from "../assets/groq.png";
+import fastapi from "../assets/FastAPI.png";
+import grafana from "../assets/Grafana.png";
+import HF from "../assets/HF.jpeg";
+import Kubernetes from "../assets/Kubernetes.png";
+import Prometheus from "../assets/Prometheus.png";
+import Langchain from "../assets/Langchain.jpeg";
+import Docker from "../assets/Docker.png";
+import Tensorflow from "../assets/Tensorflow.png";
+
 
 const iconVariants = (duration) => ({
   initial: { y: -10 },
@@ -31,7 +43,7 @@ const iconVariants = (duration) => ({
 });
 
 const icons = [
-  Sklearn, CppIcon, ReactIcon, pythonIcon, Java, Numpy, Pandas, mat, seaborn,
+  Langchain,Prometheus,grafana,Kubernetes,Docker,Tensorflow,HF,fastapi,groq,mlflow,dvc,Sklearn, CppIcon, ReactIcon, pythonIcon, Java, Numpy, Pandas, mat, seaborn,
   stream, HTML, CSS, JS, flask, djangoIcon, tailwindIcon, MysqlIcon
 ];
 

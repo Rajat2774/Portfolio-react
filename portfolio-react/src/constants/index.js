@@ -7,16 +7,36 @@ import Ovs from "../assets/ovs.jpg";
 import Amazon from "../assets/amazon.png";
 import Book from "../assets/Book.png"
 
-export const HERO=`Passionate about AI, Machine Learning, and Data Science, I’m a B.Sc. (Hons.) Computer Science student graduating in 2026, skilled in Python, C++, and Java with a strong foundation in Data Structures and Algorithms.
-I build scalable, user-focused solutions using full-stack web technologies like ReactJS, Django, Flask, HTML, CSS, and JavaScript, and blend technical expertise with creativity through design tools like Figma and Canva.
-Curious, growth-minded, and driven by real-world impact — I love transforming ideas into intelligent, beautifully designed products.
-🚀 Let’s connect and create something extraordinary together!`
-export const ABOUT=`Hi, I’m Rajat Singh — a B.Sc. (Hons.) Computer Science student set to graduate in 2026, with a deep passion for Artificial Intelligence, Machine Learning, and Data Science. I love using technology to build solutions that are not only intelligent but also impactful and user-friendly.
-With strong expertise in Python, C++, and Java, and a solid foundation in Data Structures and Algorithms, I enjoy solving complex problems and turning ideas into reality. My development skills span both backend and frontend, including ReactJS, Django, Flask, HTML, CSS, and JavaScript, allowing me to create full-stack applications that are robust, efficient, and beautifully crafted.
-Beyond code, I bring a creative edge to my work through design tools like Figma and Canva, ensuring that every product I build looks as good as it performs. I believe in blending logic with creativity to create experiences that truly stand out.
-I’m always exploring new technologies, learning continuously, and seeking opportunities to work on projects that make a difference.
-🚀 Let’s collaborate and create something extraordinary together!`;
+export const HERO = `Passionate about AI, Machine Learning, and Data Science, I'm a B.Sc. (Hons.) Computer Science student graduating in 2026, skilled in Python, C++, and Java with a strong foundation in Data Structures and Algorithms.
+
+I specialize in building intelligent systems using LLMs, NLP, and RAG architectures, alongside scalable full-stack applications with ReactJS, Django, Flask, and modern web technologies. Experienced in MLOps workflows with Docker, AWS, and CI/CD pipelines, I focus on deploying production-ready AI solutions that drive real-world impact.
+    
+Curious, growth-minded, and driven by innovation — I love transforming ideas into intelligent, scalable products.
+Let's connect and create something extraordinary together!`;
+export const ABOUT = `Hi, I'm Rajat Singh — a B.Sc. (Hons.) Computer Science student graduating in 2026, passionate about Artificial Intelligence, Machine Learning, and building intelligent systems that solve real-world problems.
+
+I specialize in AI/ML engineering with hands-on experience in LLMs, RAG systems, NLP pipelines, and MLOps workflows. Proficient in Python, C++, and Java with a strong foundation in Data Structures and Algorithms, I've built production-grade solutions including conversational AI agents, document QA systems, and predictive analytics platforms.
+
+My full-stack development skills span ReactJS, Flask, FastAPI, Django, and modern web technologies, enabling me to create end-to-end applications — from intelligent backends with vector databases to responsive, user-friendly interfaces. Experienced with Docker, AWS, CI/CD, and cloud deployment, I focus on building scalable, production-ready systems.
+
+Continuous learner, problem solver, and impact-driven builder — I'm always exploring new technologies and seeking opportunities to create meaningful solutions.
+
+Let's collaborate and build something innovative together!`;
 export const EXPERIENCES=[
+    {
+        year:"July 2025 - August 2025",
+        role:"AI and Cloud Intern",
+        company:"Edunet Foundation",
+        description:"Developed intelligent AI applications using IBM Watson, Watson Assistant, and IBM Cloud. Built conversational AI systems with context management, intent classification, and entity recognition. Integrated AI models with enterprise workflows and cloud infrastructure.",
+        technologies: ["IBM Watson","Watson Assistant","IBM Cloud","Machine Learning"],
+    },
+    {
+        year:"July 2025 - August 2025",
+        role:"Machine Learning Intern",
+        company:"Future Interns",
+        description:"Designed and deployed AI-powered chatbots with multilingual NLP capabilities using Dialogflow and OpenAI APIs. Implemented sentiment analysis, named entity recognition, and text generation models. Delivered prototypes with 90%+ user satisfaction scores.",
+        technologies: ["Scikit-Learn", "Tensorflow","Langchain","NLP"],
+    },
     {
         year:"2024 - Present",
         role:"Design Lead",

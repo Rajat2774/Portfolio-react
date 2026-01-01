@@ -27,13 +27,16 @@ const Hero = () => {
                     variants={container(0.5)}
                     initial="hidden"
                     animate="visible" 
-                    className="bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-4xl tracking-tight text-transparent">Aspiring AI/ML Engineer</motion.span>
-                <motion.p 
+                    className="bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-4xl tracking-tight text-transparent">AI/ML Engineer</motion.span>
+                <motion.div
                     variants={container(1)}
                     initial="hidden"
                     animate="visible"
-                    className="my-2 max-w-xl py-6 font-light tracking-tighter text-neutral-300">{HERO}</motion.p>
-            </div>
+                    className="my-2 max-w-xl py-6 font-light tracking-tighter text-neutral-300 whitespace-pre-line"
+                    >
+                    {HERO}
+                    </motion.div>
+         </div>
         </div>
             <div className="w-full lg:w-1/2 lg:p-8">
                 <div className="flex justify-center">
