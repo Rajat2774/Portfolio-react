@@ -2,10 +2,13 @@ import Portfolio from "../assets/portfolio.png";
 import CV from "../assets/cvbuilder.png";
 import Weather from "../assets/weather.png";
 import Currency from "../assets/currency.png";
-import Todo from "../assets/todo.png";
-import Ovs from "../assets/ovs.jpg";
 import Amazon from "../assets/amazon.png";
-import Book from "../assets/Book.png"
+import Knowlens from "../assets/knowlens_ss.jpg";
+import customer from "../assets/customer.png"
+import interview from "../assets/interview.jpg"
+import vehicle from "../assets/vehicle.png"
+import Spam from "../assets/spam.png"
+
 
 export const HERO = `Passionate about AI, Machine Learning, and Data Science, I'm a B.Sc. (Hons.) Computer Science student graduating in 2026, skilled in Python, C++, and Java with a strong foundation in Data Structures and Algorithms.
 
@@ -55,51 +58,60 @@ export const EXPERIENCES=[
 
 export const PROJECTS=[
     {
-        title:"Book Recommender System",
-        image:Book,
-        description:`Welcome to our Book Recommendation Platform – a user-friendly system built to help readers discover great books effortlessly.Displays the Top 50 most popular books, ranked by average rating.Popularity is derived from the Book Recommendation Dataset on Kaggle, combining user ratings to highlight the most loved titles.
-                    Search-Based Personalized Recommendations:
-                    Enter the title of a book you like.
-                    The platform uses Collaborative Filtering to recommend 8 similar books.
-                    Behind the scenes, it calculates the Euclidean distance between the selected book and all others based on user ratings.
-                    The 8 most similar titles (with the shortest distances) are returned as recommendations.Welcome`,
-        technologies:["Machine Leanring", "Scikit-Learn","Python","Pandas","Matplotlib","Numpy","Kaggle"],
+        title:"Knowlens",
+        image:Knowlens,
+        description:`Developed a RAG Q&A system processing 130+ page documents with 95% accuracy, <3s query latency, and 10,000+
+chunk capacity using LangChain, FAISS vector store, and optimized chunking (1500/300 tokens) for 40% improved retrieval
+precision.
+Implemented custom prompt engineering reducing hallucinations by 60% and achieving 98% source attribution accuracy
+through retrieval-aware prompts and semantic search optimization.`,
+        technologies:["Langchain", "Vector Databases","Python","Streamlit"],
     },
     {
-        title:"Portfolio Website",
+        title:"RAG Customer Support Chatbot",
+        image:customer,
+        description:`Architected a RAG-powered customer support chatbot processing 27,000+ support queries with 90%+ accuracy using
+SentenceTransformer embeddings (all-MiniLM-L6-v2) and FAISS vector store; implemented a hybrid response system with
+a 0.80 similarity threshold for direct answers, reducing LLM API calls by 60% while maintaining response latency under 2
+seconds.
+Deployed a production-grade chatbot on Streamlit integrating Groq LLM (Gemma-2-9B-IT) with a semantic search pipeline;
+optimized retrieval using 384-dimensional embeddings and FAISS indexing with logarithmic time complexity over 27,000+
+vectors, achieving 95% context relevance with session-based chat history management.`,
+        technologies:["Langchain", "Vector Database","Streamlit","Python"],
+    },
+    {
+        title:"Interview Trainer Agent",
+        image:interview,
+        description:`Engineered production RAG system on IBM watsonx.ai using Mistral-Large and ReAct framework; implemented semantic
+chunking and cosine similarity retrieval achieving 90%+ context accuracy across 50+ job roles.
+• Developed interview preparation agent with end-to-end RAG pipeline (vectorization, top-k retrieval, LLM generation);
+deployed via watsonx Agent Lab reducing prep time by 60% and hallucinations by 70%.`,
+        technologies:["IBM cloud", "IBM Watsonx","ReAct (Reason + Act)"],
+    },
+    {
+        title:"Vehicle Insurance MLOps Pipeline",
+        image:vehicle,
+        description:`Architected end-to-end MLOps system with CI/CD using GitHub Actions, reducing deployment time to 15 minutes
+• Implemented automated training/validation workflows with DVC and AWS S3; deployed containerized Flask API on EC2
+• Built comprehensive logging and monitoring with MongoDB achieving 99.5% uptime and ¡200ms latency for 1000+ daily predictions`,
+        technologies:["Python","Flask","Scikit-learn","Pandas","NumPy","MongoDB Atlas","AWS S3, EC2, IAM, ECR","Docker","GitHub Actions"],
+    },
+    {
+        title:"Spam Detection with DVC MLOps",
+        image:Spam,
+        description:`Developed NLP pipeline with TF-IDF and ensemble models achieving 97.2% accuracy on 5.5K messages
+Implemented reproducible workflows using DVC/DVCLive for experiment tracking across 50+ runs; configured AWS S3 for artifact
+management
+Automated hyperparameter optimization improving F1-score from 0.89 to 0.96; established CI/CD with automated testing`,
+        technologies:["DVC/DVCLive","AWS S3"],
+    },
+    {
+        title:"Developer Portfolio (React)",
         image:Portfolio,
-        description:"A Responsive Portfolio Website built using React,Tailwind and framer Motion",
-        technologies:["ReactJs", "TailwindCss","Framer Motion"],
-    },
-    {
-        title:"Online Voting System",
-        image:Ovs,
-        description:"An online voting system built with HTML, CSS, and JavaScript for the frontend, Flask for the backend, and MySQL for the database ensures a secure and user-friendly platform for casting votes. The system allows users to register, log in, and vote in elections, with real-time updates and validation to prevent multiple voting. The Flask backend handles routing, authentication, and interaction with the MySQL database, storing user information and vote data securely. This setup offers a streamlined, accessible, and efficient voting experience.",
-        technologies:["HTML", "CSS","JavaScript","Flask","MySql"],
-    },
-    {
-        title:"Online CV Builder",
-        image:CV,
-        description:"A CV builder created with HTML, CSS, and JavaScript for the frontend, Flask for the backend, and MySQL for the database provides an interactive platform for users to generate professional resumes. Users can input personal details, education, work experience, and skills through a user-friendly interface. The Flask backend manages data processing and storage in the MySQL database, ensuring user information is securely saved. The system allows users to preview and download their customized CVs in various formats, offering a seamless and efficient resume creation experience.",
-        technologies:["HTML", "CSS","JavaScript","Flask","MySql"],
-    },
-    {
-        title:"Weather App",
-        image:Weather,
-        description:"A weather app built using React provides real-time weather updates by fetching data from APIs. It features a responsive interface where users can search for locations and view current weather conditions, forecasts, and temperature details, ensuring an engaging and dynamic user experience.",
-        technologies:["ReactJs"],
-    },
-    {
-        title:"Currency-Converter",
-        image:Currency,
-        description:"A currency converter built using HTML, CSS, and JavaScript provides a straightforward and responsive interface for users to input amounts and select currencies for conversion. JavaScript handles the logic by fetching real-time exchange rates from APIs and performing the conversion instantly on the client side. This setup ensures a fast and efficient user experience with no backend required",
-        technologies:["HTML","CSS","JavaScript"],
-    },
-    {
-        title:"Amazon Clone",
-        image:Amazon,
-        description:"An Amazon clone using only HTML and CSS provides a static layout that mimics the look and feel of Amazon's website. It includes structured HTML to create sections like the header, navigation bar, product listings, and footer. CSS is used to style these elements, ensuring a visually similar design with responsive features for different screen sizes, but without any interactive functionality.",
-        technologies:["HTML","CSS"],
+        description:`Built a responsive portfolio using React, Tailwind CSS, and modern UI practices.
+Improved page load time by 40% through optimized components and lazy loading.
+Deployed using Vercel with CI-enabled builds.`,
+        technologies:["React","Framer Motion","Tailwind CSS"],
     },
 ]
 export const CONTACT={
