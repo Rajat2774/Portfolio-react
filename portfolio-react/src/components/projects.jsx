@@ -27,7 +27,7 @@ const Projects = () => {
                   alt={project.title}
                   className="mb-4 rounded shadow-lg max-h-64 w-auto"
                 />
-                <div className="flex flex-wrap justify-center gap-2">
+                <div className="flex flex-wrap justify-center gap-2 mb-4">
                   {project.demo && (
                     <a
                       href={project.demo}
