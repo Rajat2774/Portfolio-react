@@ -61,7 +61,7 @@ const Contact = () => {
           whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: -100 }}
           transition={{ duration: 0.5 }}
-          className="text-3xl mb-8 text-center font-semibold tracking-wide my-20"
+          className="my-20 text-center text-5xl font-extrabold tracking-tight text-white lg:text-6xl"
         >
           Get in Touch
         </motion.h1>
@@ -70,6 +70,7 @@ const Contact = () => {
           initial={{ opacity: 0, x: -100 }}
           transition={{ duration: 1 }}
           onSubmit={handleSubmit}
+          data-card="true"
           className="bg-black bg-opacity-50 p-8 rounded-lg shadow-lg max-w-md w-full"
         >
           <div className="mb-4">

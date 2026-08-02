@@ -55,7 +55,7 @@ const Technologies = () => {
           whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: -100 }}
           transition={{ duration: 1.5 }}
-          className="my-20 text-center text-4xl text-white"
+          className="my-20 text-center text-5xl font-extrabold tracking-tight text-white lg:text-6xl"
         >
           Technologies
         </motion.h1>
@@ -72,6 +72,7 @@ const Technologies = () => {
               variants={iconVariants(2 + (index % 5))}
               initial="initial"
               animate="animate"
+              data-card="true"
               className="rounded-2xl border-4 border-neutral-800 p-4 flex items-center justify-center bg-neutral-900"
             >
               <img src={icon} alt={`tech-icon-${index}`} width={64} height={64} />
