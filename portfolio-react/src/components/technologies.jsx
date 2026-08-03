@@ -4,7 +4,7 @@ import pythonIcon from "../assets/python.png";
 import djangoIcon from "../assets/django.png";
 import tailwindIcon from "../assets/Tailwind.png";
 import MysqlIcon from "../assets/sql.png";
-import { animate, motion } from "motion/react"
+import { animate, motion } from "motion/react";
 import Sklearn from "../assets/scikit-learn.png";
 import Numpy from "../assets/NumPy.png";
 import Pandas from "../assets/Pandas.png";
@@ -27,6 +27,7 @@ import Prometheus from "../assets/Prometheus.png";
 import Langchain from "../assets/Langchain.jpeg";
 import Docker from "../assets/Docker.png";
 import Tensorflow from "../assets/TensorFlow.png";
+import { useTheme } from '../context/ThemeContext';
 
 
 const iconVariants = (duration) => ({
@@ -48,14 +49,29 @@ const icons = [
 ];
 
 const Technologies = () => {
+  const { theme } = useTheme();
+  const isDark = theme === 'dark';
+
   return (
     <section id="tech">
-      <div className="border-b border-neutral-800 pb-24">
+      <div className="pb-24">
+        {/* eyebrow */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.5 }}
+          className="mt-20 mb-10 flex items-center gap-4 px-4 lg:px-8"
+        >
+          <span className={`font-mono text-sm ${isDark ? 'text-neutral-500' : 'text-sky-400'}`}>02.</span>
+          <span className={`h-px flex-1 ${isDark ? 'bg-neutral-800' : 'bg-sky-200'}`} />
+        </motion.div>
+
         <motion.h1
           whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: -100 }}
           transition={{ duration: 1.5 }}
-          className="my-20 text-center text-5xl font-extrabold tracking-tight text-white lg:text-6xl"
+          className={`mb-20 text-center text-5xl font-extrabold tracking-tight lg:text-6xl ${isDark ? 'text-white' : 'text-neutral-900'}`}
         >
           Technologies
         </motion.h1>
@@ -73,7 +89,11 @@ const Technologies = () => {
               initial="initial"
               animate="animate"
               data-card="true"
-              className="rounded-2xl border-4 border-neutral-800 p-4 flex items-center justify-center bg-neutral-900"
+              className={`rounded-2xl border-4 p-4 flex items-center justify-center ${
+                isDark
+                  ? 'border-neutral-800 bg-neutral-900'
+                  : 'border-sky-100 bg-white shadow-md shadow-sky-100/50'
+              }`}
             >
               <img src={icon} alt={`tech-icon-${index}`} width={64} height={64} />
             </motion.div>

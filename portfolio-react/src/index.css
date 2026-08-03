@@ -9,10 +9,17 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
-  background-color: #000000;
 }
 
+/* Light mode defaults */
 body {
+  background-color: #ffffff;
+  color: #171717;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode overrides */
+html.dark body {
   background-color: #000000;
   color: #ffffff;
 }
@@ -20,4 +27,4 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
   letter-spacing: -0.02em;
-}
+}

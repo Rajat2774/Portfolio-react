@@ -1,4 +1,5 @@
-import { motion } from "motion/react"
+import { motion } from "motion/react";
+import { useTheme } from '../context/ThemeContext';
 
 // Replace with your real interests
 const INTERESTS = [
@@ -20,9 +21,12 @@ const itemVariants = {
 };
 
 const About = () => {
+    const { theme } = useTheme();
+    const isDark = theme === 'dark';
+
     return (
         <section id="about">
-            <div className="border-b border-neutral-900 pb-4">
+            <div className="pb-4">
 
                 {/* eyebrow */}
                 <motion.div
@@ -32,16 +36,16 @@ const About = () => {
                     transition={{ duration: 0.5 }}
                     className="mt-20 mb-10 flex items-center gap-4 px-4 lg:px-8"
                 >
-                    <span className="font-mono text-sm text-neutral-500">01.</span>
-                    <span className="h-px flex-1 bg-neutral-800" />
+                    <span className={`font-mono text-sm ${isDark ? 'text-neutral-500' : 'text-sky-400'}`}>01.</span>
+                    <span className={`h-px flex-1 ${isDark ? 'bg-neutral-800' : 'bg-sky-200'}`} />
                 </motion.div>
 
-                <h1 className="mb-16 px-4 text-5xl font-extrabold tracking-tight text-white lg:px-8 lg:text-6xl">
-                    About<span className="text-neutral-500"> Me</span>
+                <h1 className={`mb-16 px-4 text-5xl font-extrabold tracking-tight lg:px-8 lg:text-6xl ${isDark ? 'text-white' : 'text-neutral-900'}`}>
+                    About<span className={isDark ? 'text-neutral-500' : 'text-neutral-400'}> Me</span>
                 </h1>
 
                 <div className="flex flex-wrap gap-y-12 px-4 lg:px-8">
-                    {/* left: bio text — replace with your own copy */}
+                    {/* left: bio text */}
                     <motion.div
                         initial={{ opacity: 0, x: -40 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -49,20 +53,20 @@ const About = () => {
                         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                         className="w-full lg:w-1/2 lg:pr-8"
                     >
-                        <p className="max-w-xl text-lg text-neutral-300">
-                            I'm an <strong className="font-semibold text-white">AI Engineer</strong> passionate about{" "}
-                            <strong className="font-semibold text-white">Agentic AI</strong>,{" "}
-                            <strong className="font-semibold text-white">Large Language Models (LLMs)</strong>, and{" "}
-                            <strong className="font-semibold text-white">Full-Stack AI Development</strong>.
+                        <p className={`max-w-xl text-lg ${isDark ? 'text-neutral-300' : 'text-neutral-600'}`}>
+                            I'm an <strong className={`font-semibold ${isDark ? 'text-white' : 'text-neutral-900'}`}>AI Engineer</strong> passionate about{" "}
+                            <strong className={`font-semibold ${isDark ? 'text-white' : 'text-neutral-900'}`}>Agentic AI</strong>,{" "}
+                            <strong className={`font-semibold ${isDark ? 'text-white' : 'text-neutral-900'}`}>Large Language Models (LLMs)</strong>, and{" "}
+                            <strong className={`font-semibold ${isDark ? 'text-white' : 'text-neutral-900'}`}>Full-Stack AI Development</strong>.
                         </p>
 
-                        <p className="mt-6 max-w-xl text-neutral-400">
+                        <p className={`mt-6 max-w-xl ${isDark ? 'text-neutral-400' : 'text-neutral-500'}`}>
                             I build intelligent applications powered by LLMs, RAG pipelines, multi-agent systems, and
                             scalable AI infrastructure. My work focuses on turning cutting-edge AI research into
                             practical, production-ready solutions that solve real-world problems.
                         </p>
 
-                        <p className="mt-6 max-w-xl text-neutral-400">
+                        <p className={`mt-6 max-w-xl ${isDark ? 'text-neutral-400' : 'text-neutral-500'}`}>
                             Beyond AI, I enjoy exploring cybersecurity, Linux, cloud technologies, and MLOps. I'm
                             constantly learning, experimenting with new technologies, and building projects that push
                             the boundaries of intelligent software.
@@ -77,23 +81,29 @@ const About = () => {
                         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                         className="w-full lg:w-1/2"
                     >
-                        <div className="overflow-hidden rounded-xl border border-neutral-800 bg-neutral-950 font-mono text-sm shadow-2xl shadow-black/40">
+                        <div className={`overflow-hidden rounded-xl border font-mono text-sm shadow-2xl ${
+                            isDark
+                                ? 'border-neutral-800 bg-neutral-950 shadow-black/40'
+                                : 'border-neutral-200 bg-white shadow-neutral-200/60'
+                        }`}>
                             {/* title bar */}
-                            <div className="flex items-center gap-2 border-b border-neutral-800 bg-neutral-900/60 px-4 py-3">
-                                <span className="h-3 w-3 rounded-full bg-neutral-700" />
-                                <span className="h-3 w-3 rounded-full bg-neutral-700" />
-                                <span className="h-3 w-3 rounded-full bg-neutral-700" />
-                                <span className="ml-2 text-xs text-neutral-500">terminal — bash</span>
+                            <div className={`flex items-center gap-2 border-b px-4 py-3 ${
+                                isDark ? 'border-neutral-800 bg-neutral-900/60' : 'border-neutral-200 bg-neutral-50'
+                            }`}>
+                                <span className={`h-3 w-3 rounded-full ${isDark ? 'bg-neutral-700' : 'bg-red-400'}`} />
+                                <span className={`h-3 w-3 rounded-full ${isDark ? 'bg-neutral-700' : 'bg-yellow-400'}`} />
+                                <span className={`h-3 w-3 rounded-full ${isDark ? 'bg-neutral-700' : 'bg-green-400'}`} />
+                                <span className={`ml-2 text-xs ${isDark ? 'text-neutral-500' : 'text-neutral-400'}`}>terminal — bash</span>
                             </div>
 
                             {/* body */}
-                            <div className="space-y-4 px-6 py-6 text-neutral-300">
-                                <p><span className="text-neutral-500">$</span> whoami</p>
+                            <div className={`space-y-4 px-6 py-6 ${isDark ? 'text-neutral-300' : 'text-neutral-600'}`}>
+                                <p><span className={isDark ? 'text-neutral-500' : 'text-sky-400'}>$</span> whoami</p>
 
-                                <p>Name: <span className="text-white">Your Name</span></p>
+                                <p>Name: <span className={isDark ? 'text-white' : 'text-neutral-900'}>Rajat Singh</span></p>
 
                                 <div>
-                                    <p className="mb-2 text-neutral-500">Interests:</p>
+                                    <p className={`mb-2 ${isDark ? 'text-neutral-500' : 'text-sky-400'}`}>Interests:</p>
                                     <motion.ul
                                         variants={listVariants}
                                         initial="hidden"
@@ -102,24 +112,24 @@ const About = () => {
                                         className="space-y-1"
                                     >
                                         {INTERESTS.map((interest) => (
-                                            <motion.li key={interest} variants={itemVariants} className="text-white">
-                                                <span className="text-neutral-500">→</span> {interest}
+                                            <motion.li key={interest} variants={itemVariants} className={isDark ? 'text-white' : 'text-neutral-800'}>
+                                                <span className={isDark ? 'text-neutral-500' : 'text-sky-400'}>→</span> {interest}
                                             </motion.li>
                                         ))}
                                     </motion.ul>
                                 </div>
 
                                 <div>
-                                    <p className="text-neutral-500">Status:</p>
-                                    <p className="text-white">
-                                        Building the future... <span className="text-neutral-400">✓</span>
+                                    <p className={isDark ? 'text-neutral-500' : 'text-sky-400'}>Status:</p>
+                                    <p className={isDark ? 'text-white' : 'text-neutral-800'}>
+                                        Building the future... <span className={isDark ? 'text-neutral-400' : 'text-sky-400'}>✓</span>
                                     </p>
                                 </div>
 
-                                <p className="flex items-center gap-1 text-neutral-500">
+                                <p className={`flex items-center gap-1 ${isDark ? 'text-neutral-500' : 'text-sky-400'}`}>
                                     $
                                     <motion.span
-                                        className="inline-block h-4 w-2 bg-neutral-400"
+                                        className={`inline-block h-4 w-2 ${isDark ? 'bg-neutral-400' : 'bg-sky-400'}`}
                                         animate={{ opacity: [1, 1, 0, 0] }}
                                         transition={{ duration: 1, times: [0, 0.5, 0.5, 1], repeat: Infinity, ease: "linear" }}
                                         aria-hidden="true"
@@ -131,7 +141,7 @@ const About = () => {
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};
 
-export default About
+export default About;

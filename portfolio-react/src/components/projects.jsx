@@ -4,11 +4,10 @@ import { FaGithub } from "react-icons/fa";
 import { FiArrowUpRight } from "react-icons/fi";
 import { GoDotFill } from "react-icons/go";
 import { PROJECTS } from "../constants";
+import { useTheme } from '../context/ThemeContext';
 
 /**
- * ProjectCard — Dark "Blueprint" concept adapted for portfolio theme.
- * Uses the dark neutral-950 background with fuchsia/purple accents
- * to match the CursorGrid and overall portfolio aesthetic.
+ * ProjectCard — Dual-themed blueprint card.
  */
 
 // ---- Motion variants ------------------------------------------------
@@ -48,6 +47,8 @@ const statusMap = {
 };
 
 function ProjectCard({ project, index }) {
+  const { theme } = useTheme();
+  const isDark = theme === 'dark';
   const status = statusMap[project.status] || statusMap.live;
   const formattedIndex = String(index + 1).padStart(2, "0");
 
@@ -60,9 +61,13 @@ function ProjectCard({ project, index }) {
       variants={cardVariants}
       whileHover="hover"
       data-card="true"
-      className="group relative flex flex-col bg-neutral-900/60 border border-neutral-800 rounded-lg backdrop-blur-sm overflow-hidden"
+      className={`group relative flex flex-col rounded-lg backdrop-blur-sm overflow-hidden border ${
+        isDark
+          ? 'bg-neutral-900/60 border-neutral-800'
+          : 'bg-white border-neutral-200 shadow-md'
+      }`}
     >
-      {/* corner crop-marks — fuchsia accent */}
+      {/* corner crop-marks */}
       <svg className="pointer-events-none absolute inset-0 h-full w-full z-10" viewBox="0 0 100 100" preserveAspectRatio="none">
         {[
           "M2,10 L2,2 L10,2",
@@ -74,7 +79,7 @@ function ProjectCard({ project, index }) {
             key={i}
             d={d}
             fill="none"
-            stroke="#D946EF"
+            stroke={isDark ? "#D946EF" : "#38bdf8"}
             strokeWidth="0.6"
             variants={bracketVariants}
             vectorEffect="non-scaling-stroke"
@@ -92,16 +97,23 @@ function ProjectCard({ project, index }) {
               className="h-full w-full object-cover"
             />
           ) : (
-            <div className="relative h-full w-full bg-gradient-to-br from-neutral-900 to-neutral-800 overflow-hidden">
+            <div className={`relative h-full w-full overflow-hidden ${
+              isDark
+                ? 'bg-gradient-to-br from-neutral-900 to-neutral-800'
+                : 'bg-gradient-to-br from-sky-50 to-white'
+            }`}>
               <div
                 className="absolute inset-0 opacity-[0.08]"
                 style={{
-                  backgroundImage:
-                    "linear-gradient(#D946EF 1px, transparent 1px), linear-gradient(90deg, #D946EF 1px, transparent 1px)",
+                  backgroundImage: isDark
+                    ? "linear-gradient(#D946EF 1px, transparent 1px), linear-gradient(90deg, #D946EF 1px, transparent 1px)"
+                    : "linear-gradient(#38bdf8 1px, transparent 1px), linear-gradient(90deg, #38bdf8 1px, transparent 1px)",
                   backgroundSize: "24px 24px",
                 }}
               />
-              <span className="absolute -bottom-6 -right-2 text-[9rem] font-bold leading-none text-fuchsia-500/10 select-none">
+              <span className={`absolute -bottom-6 -right-2 text-[9rem] font-bold leading-none select-none ${
+                isDark ? 'text-fuchsia-500/10' : 'text-sky-300/20'
+              }`}>
                 {project.title.charAt(0)}
               </span>
             </div>
@@ -123,7 +135,9 @@ function ProjectCard({ project, index }) {
                 target="_blank"
                 rel="noreferrer"
                 aria-label={`${project.title} source on GitHub`}
-                className="rounded-full bg-white/10 p-1.5 text-white hover:bg-fuchsia-500/30 transition-colors"
+                className={`rounded-full p-1.5 text-white transition-colors ${
+                  isDark ? 'bg-white/10 hover:bg-fuchsia-500/30' : 'bg-white/10 hover:bg-sky-500/30'
+                }`}
               >
                 <FaGithub size={14} />
               </a>
@@ -134,7 +148,9 @@ function ProjectCard({ project, index }) {
                 target="_blank"
                 rel="noreferrer"
                 aria-label={`${project.title} live demo`}
-                className="rounded-full bg-white/10 p-1.5 text-white hover:bg-fuchsia-500/30 transition-colors"
+                className={`rounded-full p-1.5 text-white transition-colors ${
+                  isDark ? 'bg-white/10 hover:bg-fuchsia-500/30' : 'bg-white/10 hover:bg-sky-500/30'
+                }`}
               >
                 <FiArrowUpRight size={14} />
               </a>
@@ -150,7 +166,7 @@ function ProjectCard({ project, index }) {
             <span className="font-mono text-[11px] tracking-widest text-neutral-500">
               FIG. {formattedIndex}
             </span>
-            <h3 className="text-lg font-bold text-white leading-tight">
+            <h3 className={`text-lg font-bold leading-tight ${isDark ? 'text-white' : 'text-neutral-900'}`}>
               {project.title}
             </h3>
           </div>
@@ -161,9 +177,9 @@ function ProjectCard({ project, index }) {
         </div>
 
         {project.tagline && (
-          <p className="text-sm font-medium text-fuchsia-300/80">{project.tagline}</p>
+          <p className={`text-sm font-medium ${isDark ? 'text-fuchsia-300/80' : 'text-sky-500'}`}>{project.tagline}</p>
         )}
-        <p className="text-sm leading-relaxed text-neutral-400">{project.description}</p>
+        <p className={`text-sm leading-relaxed ${isDark ? 'text-neutral-400' : 'text-neutral-500'}`}>{project.description}</p>
 
         {/* tech stack chips */}
         <motion.ul
@@ -176,7 +192,11 @@ function ProjectCard({ project, index }) {
             <motion.li
               key={t}
               variants={chipVariants}
-              className="rounded border border-neutral-700 bg-neutral-800/60 px-2 py-0.5 font-mono text-[11px] text-fuchsia-300/70"
+              className={`rounded border px-2 py-0.5 font-mono text-[11px] ${
+                isDark
+                  ? 'border-neutral-700 bg-neutral-800/60 text-fuchsia-300/70'
+                  : 'border-sky-200 bg-sky-50 text-sky-600'
+              }`}
             >
               {t}
             </motion.li>
@@ -184,11 +204,13 @@ function ProjectCard({ project, index }) {
         </motion.ul>
 
         {/* footer: metric + links */}
-        <div className="mt-auto flex items-center justify-between border-t border-neutral-800 pt-3">
+        <div className={`mt-auto flex items-center justify-between border-t pt-3 ${
+          isDark ? 'border-neutral-800' : 'border-neutral-200'
+        }`}>
           {project.metric ? (
             <div className="font-mono text-xs text-neutral-500">
               <span className="text-neutral-600">{project.metric.label} </span>
-              <span className="font-semibold text-fuchsia-400">{project.metric.value}</span>
+              <span className={`font-semibold ${isDark ? 'text-fuchsia-400' : 'text-sky-500'}`}>{project.metric.value}</span>
             </div>
           ) : (
             <span />
@@ -199,7 +221,7 @@ function ProjectCard({ project, index }) {
                 href={project.code}
                 target="_blank"
                 rel="noreferrer"
-                className="text-neutral-400 hover:text-fuchsia-400 transition-colors"
+                className={`transition-colors ${isDark ? 'text-neutral-400 hover:text-fuchsia-400' : 'text-neutral-400 hover:text-sky-500'}`}
               >
                 Code
               </a>
@@ -209,7 +231,7 @@ function ProjectCard({ project, index }) {
                 href={project.demo}
                 target="_blank"
                 rel="noreferrer"
-                className="text-neutral-400 hover:text-fuchsia-400 transition-colors"
+                className={`transition-colors ${isDark ? 'text-neutral-400 hover:text-fuchsia-400' : 'text-neutral-400 hover:text-sky-500'}`}
               >
                 Live
               </a>
@@ -222,16 +244,31 @@ function ProjectCard({ project, index }) {
 }
 
 export default function Projects() {
+  const { theme } = useTheme();
+  const isDark = theme === 'dark';
+
   return (
     <section id="projects">
-      <div className="border-b border-neutral-900 pb-4">
-        <div className="mb-10 flex items-end justify-between border-b border-neutral-800 pb-4 mt-20">
+      <div className="pb-4">
+        {/* eyebrow */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.5 }}
+          className="mt-20 mb-10 flex items-center gap-4 px-4 lg:px-8"
+        >
+          <span className={`font-mono text-sm ${isDark ? 'text-neutral-500' : 'text-sky-400'}`}>04.</span>
+          <span className={`h-px flex-1 ${isDark ? 'bg-neutral-800' : 'bg-sky-200'}`} />
+        </motion.div>
+
+        <div className="mb-10 flex items-end justify-between px-4 lg:px-8">
           <div>
             <motion.h2
               whileInView={{ opacity: 1, y: 0 }}
               initial={{ opacity: 0, y: -50 }}
               transition={{ duration: 0.5 }}
-              className="text-5xl font-extrabold tracking-tight text-white lg:text-6xl"
+              className={`text-5xl font-extrabold tracking-tight lg:text-6xl ${isDark ? 'text-white' : 'text-neutral-900'}`}
             >
               Projects
             </motion.h2>

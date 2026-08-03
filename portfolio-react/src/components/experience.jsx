@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
 import { EXPERIENCES } from '../constants';
-import { motion } from "motion/react"
+import { motion } from "motion/react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBriefcase, faGraduationCap } from '@fortawesome/free-solid-svg-icons';
 import { Timeline } from './ui/timeline';
+import { useTheme } from '../context/ThemeContext';
 
 // Picks briefcase vs. graduation cap based on experience type or text matching
 function getIcon(experience) {
@@ -17,23 +18,30 @@ function getIcon(experience) {
 }
 
 const Experience = () => {
+    const { theme } = useTheme();
+    const isDark = theme === 'dark';
+
     // Map EXPERIENCES into the Timeline data format
     const timelineData = EXPERIENCES.map((experience) => ({
         title: experience.year,
         content: (
-            <div data-card="true" className='rounded-2xl border border-neutral-800 bg-neutral-900/40 p-6 backdrop-blur-sm transition-colors hover:border-purple-500/40'>
+            <div data-card="true" className={`rounded-2xl border p-6 backdrop-blur-sm transition-colors ${
+                isDark
+                    ? 'border-neutral-800 bg-neutral-900/40 hover:border-purple-500/40'
+                    : 'border-neutral-200 bg-white shadow-md hover:border-sky-300'
+            }`}>
                 <div className='mb-1 flex items-center gap-3'>
-                    <FontAwesomeIcon icon={getIcon(experience)} className='text-xl text-purple-400' />
-                    <h3 className='text-lg font-bold text-white'>{experience.role}</h3>
+                    <FontAwesomeIcon icon={getIcon(experience)} className={`text-xl ${isDark ? 'text-purple-400' : 'text-sky-500'}`} />
+                    <h3 className={`text-lg font-bold ${isDark ? 'text-white' : 'text-neutral-900'}`}>{experience.role}</h3>
                 </div>
-                <p className='mb-4 text-neutral-400'>{experience.company}</p>
+                <p className={`mb-4 ${isDark ? 'text-neutral-400' : 'text-neutral-500'}`}>{experience.company}</p>
 
                 {experience.cgpa && (
-                    <p className='mt-3 text-sm text-neutral-400'>CGPA {experience.cgpa}</p>
+                    <p className={`mt-3 text-sm ${isDark ? 'text-neutral-400' : 'text-neutral-500'}`}>CGPA {experience.cgpa}</p>
                 )}
 
                 {experience.description && (
-                    <p className='mt-4 text-sm text-neutral-400 leading-relaxed'>{experience.description}</p>
+                    <p className={`mt-4 text-sm leading-relaxed ${isDark ? 'text-neutral-400' : 'text-neutral-500'}`}>{experience.description}</p>
                 )}
 
                 {experience.technologies?.length > 0 && (
@@ -41,7 +49,11 @@ const Experience = () => {
                         {experience.technologies.map((tech, techIndex) => (
                             <span
                                 key={techIndex}
-                                className='rounded border border-neutral-700 bg-neutral-800/60 px-2 py-1 text-xs font-mono text-fuchsia-300/80'
+                                className={`rounded border px-2 py-1 text-xs font-mono ${
+                                    isDark
+                                        ? 'border-neutral-700 bg-neutral-800/60 text-fuchsia-300/80'
+                                        : 'border-sky-200 bg-sky-50 text-sky-600'
+                                }`}
                             >
                                 {tech}
                             </span>
@@ -54,13 +66,25 @@ const Experience = () => {
 
     return (
         <section id="experience">
-            <div className='border-b border-neutral-900 pb-4'>
+            <div className='pb-4'>
+                {/* eyebrow */}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.5 }}
+                    className="mt-20 mb-10 flex items-center gap-4 px-4 lg:px-8"
+                >
+                    <span className={`font-mono text-sm ${isDark ? 'text-neutral-500' : 'text-sky-400'}`}>03.</span>
+                    <span className={`h-px flex-1 ${isDark ? 'bg-neutral-800' : 'bg-sky-200'}`} />
+                </motion.div>
+
                 <motion.h2
                     initial={{ opacity: 0, y: -20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.5, ease: "easeOut" }}
-                    className='my-20 text-center text-5xl font-extrabold tracking-tight text-white lg:text-6xl'
+                    className={`mb-20 text-center text-5xl font-extrabold tracking-tight lg:text-6xl ${isDark ? 'text-white' : 'text-neutral-900'}`}
                 >
                     Experience
                 </motion.h2>
@@ -71,4 +95,4 @@ const Experience = () => {
     );
 };
 
-export default Experience
+export default Experience;

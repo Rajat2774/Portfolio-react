@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+export const darkMode = 'class';
 export const content = [
-  "./src/**/*.{js,jsx,ts,tsx}", // Add this line if it's missing
+  "./src/**/*.{js,jsx,ts,tsx}",
 ];
 export const theme = {
   extend: {},
