@@ -11,7 +11,7 @@ import Spam from "../assets/spam.png";
 import frame from "../assets/frame.png";
 import lockyt from "../assets/lockyt.png";
 
-export const HERO = `AI/ML Engineer and Computer Science student (B.Sc. Hons., 2026) specializing in LLMs, RAG architectures, and NLP pipelines. I build intelligent, production-ready systems — from conversational AI agents to end-to-end MLOps workflows.
+export const HERO = `AI/ML Engineer and Computer Science student specializing in LLMs, RAG architectures, and NLP pipelines. I build intelligent, production-ready systems — from conversational AI agents to end-to-end MLOps workflows.
 
 Proficient in Python, C++, and Java with strong DSA fundamentals. Experienced across the full stack with React, FastAPI, Django, Docker, and AWS.`;
 export const ABOUT = `I'm Rajat Singh — an AI/ML engineer who turns ideas into intelligent, production-grade software.
