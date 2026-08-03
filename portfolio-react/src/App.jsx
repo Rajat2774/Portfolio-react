@@ -8,7 +8,7 @@ import Projects from './components/projects';
 import Contact from './components/contact';
 import DarkParticleBackground from './components/ui/DarkParticleBackground.jsx';
 import { ThemeProvider, useTheme } from './context/ThemeContext';
-import CommandTerminal from './components/CommandTerminal';
+import CommandTerminal from './components/Commandterminal.jsx';
 
 function AppContent() {
   const { theme } = useTheme();
