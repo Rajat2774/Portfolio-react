@@ -199,7 +199,7 @@ const Contact = () => {
                     id="name"
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder="John Doe"
+                    placeholder="Your Name"
                     required
                     className={`w-full p-3 border rounded-lg focus:outline-none focus:ring-1 transition-colors ${inputClass}`}
                   />
@@ -213,7 +213,7 @@ const Contact = () => {
                     id="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="john@example.com"
+                    placeholder="youremail@example.com"
                     required
                     className={`w-full p-3 border rounded-lg focus:outline-none focus:ring-1 transition-colors ${inputClass}`}
                   />

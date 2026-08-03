@@ -43,9 +43,35 @@ const iconVariants = (duration) => ({
   },
 });
 
-const icons = [
-  Langchain,Prometheus,grafana,Kubernetes,Docker,Tensorflow,HF,fastapi,groq,mlflow,dvc,Sklearn, CppIcon, ReactIcon, pythonIcon, Java, Numpy, Pandas, mat, seaborn,
-  stream, HTML, CSS, JS, flask, djangoIcon, tailwindIcon, MysqlIcon
+const technologies = [
+  { name: "LangChain", icon: Langchain },
+  { name: "Prometheus", icon: Prometheus },
+  { name: "Grafana", icon: grafana },
+  { name: "Kubernetes", icon: Kubernetes },
+  { name: "Docker", icon: Docker },
+  { name: "TensorFlow", icon: Tensorflow },
+  { name: "Hugging Face", icon: HF },
+  { name: "FastAPI", icon: fastapi },
+  { name: "Groq", icon: groq },
+  { name: "MLflow", icon: mlflow },
+  { name: "DVC", icon: dvc },
+  { name: "Scikit-learn", icon: Sklearn },
+  { name: "C++", icon: CppIcon },
+  { name: "React", icon: ReactIcon },
+  { name: "Python", icon: pythonIcon },
+  { name: "Java", icon: Java },
+  { name: "NumPy", icon: Numpy },
+  { name: "Pandas", icon: Pandas },
+  { name: "Matplotlib", icon: mat },
+  { name: "Seaborn", icon: seaborn },
+  { name: "Streamlit", icon: stream },
+  { name: "HTML5", icon: HTML },
+  { name: "CSS3", icon: CSS },
+  { name: "JavaScript", icon: JS },
+  { name: "Flask", icon: flask },
+  { name: "Django", icon: djangoIcon },
+  { name: "Tailwind", icon: tailwindIcon },
+  { name: "SQL", icon: MysqlIcon },
 ];
 
 const Technologies = () => {
@@ -88,20 +114,23 @@ const Technologies = () => {
           transition={{ duration: 1.5 }}
           className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-6 px-4"
         >
-          {icons.map((icon, index) => (
+          {technologies.map((tech, index) => (
             <motion.div
-              key={index}
+              key={tech.name}
               variants={iconVariants(2 + (index % 5))}
               initial="initial"
               animate="animate"
               data-card="true"
-              className={`rounded-2xl border-4 p-4 flex items-center justify-center ${
+              className={`rounded-2xl border-4 p-3 flex flex-col items-center justify-center gap-2 text-center ${
                 isDark
                   ? 'border-neutral-800 bg-neutral-900'
                   : 'border-sky-100 bg-white shadow-md shadow-sky-100/50'
               }`}
             >
-              <img src={icon} alt={`tech-icon-${index}`} width={64} height={64} />
+              <img src={tech.icon} alt={tech.name} width={48} height={48} className="h-12 w-12 object-contain" />
+              <span className={`text-[10px] font-medium tracking-wide ${isDark ? 'text-neutral-300' : 'text-neutral-700'}`}>
+                {tech.name}
+              </span>
             </motion.div>
           ))}
         </motion.div>

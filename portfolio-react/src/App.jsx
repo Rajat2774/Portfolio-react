@@ -8,6 +8,7 @@ import Projects from './components/projects';
 import Contact from './components/contact';
 import DarkParticleBackground from './components/ui/DarkParticleBackground.jsx';
 import { ThemeProvider, useTheme } from './context/ThemeContext';
+import CommandTerminal from './components/CommandTerminal';
 
 function AppContent() {
   const { theme } = useTheme();
@@ -30,6 +31,7 @@ function AppContent() {
           <Technologies/>
           <Experience/>
           <Projects/>
+          <CommandTerminal />
           <Contact/>
         </div>
       </div>
