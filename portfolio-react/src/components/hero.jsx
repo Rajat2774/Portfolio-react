@@ -17,7 +17,13 @@ const Hero = () => {
     const isDark = theme === 'dark';
 
     return (
-        <section id="home">
+        <motion.section
+            id="home"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-120px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+        >
             <div className="pb-12 lg:mb-35 mt-24">
                 <div className="flex flex-wrap items-center">
                     <div className="w-full lg:w-7/12">
@@ -72,7 +78,7 @@ const Hero = () => {
                     </div>
                 </div>
             </div>
-        </section>
+        </motion.section>
     );
 };
 

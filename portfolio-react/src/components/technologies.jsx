@@ -53,7 +53,13 @@ const Technologies = () => {
   const isDark = theme === 'dark';
 
   return (
-    <section id="tech">
+    <motion.section
+      id="tech"
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-120px" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
       <div className="pb-24">
         {/* eyebrow */}
         <motion.div
@@ -100,7 +106,7 @@ const Technologies = () => {
           ))}
         </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

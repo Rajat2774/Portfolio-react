@@ -1,8 +1,73 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import logo from "../assets/logo.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faSun, faMoon, faHeart } from "@fortawesome/free-solid-svg-icons";
 import { useTheme } from '../context/ThemeContext';
+
+// Change this to anything unique to your site — free, no-signup counter API.
+const LIKE_KEY = "rajatsingh2774-portfolio-likes";
+const COUNTAPI_BASE = "https://countapi.mileshilliard.com/api/v1";
+
+function LikeButton({ theme }) {
+    const [count, setCount] = useState(null);
+    const [liked, setLiked] = useState(false);
+
+    useEffect(() => {
+        setLiked(localStorage.getItem("portfolio-liked") === "true");
+
+        fetch(`${COUNTAPI_BASE}/get/${LIKE_KEY}`)
+            .then((res) => (res.status === 404 ? { value: 0 } : res.json()))
+            .then((data) => setCount(Number(data.value) || 0))
+            .catch(() => setCount(0));
+    }, []);
+
+    const handleClick = async () => {
+        if (count === null) return;
+
+        if (!liked) {
+            setLiked(true);
+            setCount((c) => c + 1);
+            localStorage.setItem("portfolio-liked", "true");
+            try {
+                await fetch(`${COUNTAPI_BASE}/hit/${LIKE_KEY}`);
+            } catch {
+                // optimistic count already shown, safe to ignore
+            }
+        } else {
+            const next = Math.max(0, count - 1);
+            setLiked(false);
+            setCount(next);
+            localStorage.setItem("portfolio-liked", "false");
+            try {
+                await fetch(`${COUNTAPI_BASE}/set/${LIKE_KEY}?value=${next}`);
+            } catch {
+                // ignore
+            }
+        }
+    };
+
+    return (
+        <button
+            onClick={handleClick}
+            aria-label={liked ? "Unlike this portfolio" : "Like this portfolio"}
+            className={`flex items-center gap-1.5 rounded-full px-2.5 py-1.5 text-sm transition-colors ${
+                theme === 'dark'
+                    ? 'text-neutral-300 hover:bg-neutral-800'
+                    : 'text-neutral-600 hover:bg-sky-100'
+            }`}
+        >
+            <motion.span
+                animate={liked ? { scale: [1, 1.4, 1] } : { scale: 1 }}
+                transition={{ duration: 0.35 }}
+                className={liked ? "text-pink-500" : ""}
+            >
+                <FontAwesomeIcon icon={faHeart} />
+            </motion.span>
+            <span className="min-w-[1ch] tabular-nums">{count === null ? "…" : count}</span>
+        </button>
+    );
+}
 
 function Navbar() {
     const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -43,8 +108,10 @@ function Navbar() {
                     })}
                 </div>
 
-                {/* Right side: theme toggle + mobile menu */}
-                <div className="flex items-center gap-3">
+                {/* Right side: like counter + theme toggle + mobile menu */}
+                <div className="flex items-center gap-2">
+                    <LikeButton theme={theme} />
+
                     {/* Theme toggle */}
                     <button
                         onClick={toggleTheme}

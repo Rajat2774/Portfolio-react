@@ -248,7 +248,13 @@ export default function Projects() {
   const isDark = theme === 'dark';
 
   return (
-    <section id="projects">
+    <motion.section
+      id="projects"
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-120px" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
       <div className="pb-4">
         {/* eyebrow */}
         <motion.div
@@ -284,6 +290,6 @@ export default function Projects() {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

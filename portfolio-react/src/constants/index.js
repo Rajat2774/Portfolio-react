@@ -160,6 +160,7 @@ export const CONTACT = {
   email: "rajatsingh2774@gmail.com",
 };
 export const SOCIAL = {
+  email: "rajatsingh2774@gmail.com",
   linkedin: "https://www.linkedin.com/in/rajat-singh-6558aa294",
   github: "https://github.com/Rajat2774",
   twitter: "https://x.com/RAJAT_073?t=79ACVgXfCoWMhvVrMb3Tpw&s=09",

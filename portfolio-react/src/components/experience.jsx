@@ -65,7 +65,13 @@ const Experience = () => {
     }));
 
     return (
-        <section id="experience">
+        <motion.section
+            id="experience"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-120px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+        >
             <div className='pb-4'>
                 {/* eyebrow */}
                 <motion.div
@@ -91,7 +97,7 @@ const Experience = () => {
 
                 <Timeline data={timelineData} />
             </div>
-        </section>
+        </motion.section>
     );
 };
 
