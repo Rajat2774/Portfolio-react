@@ -97,14 +97,21 @@ const CommandTerminal = () => {
                 break;
             case "resume":
                 pushLine("output", "Downloading resume...");
-                setTimeout(() => {
-                    const link = document.createElement("a");
-                    link.href = RESUME_URL;
-                    link.download = "Resume_AI_July2026.pdf";
-                    link.target = "_blank";
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
+                setTimeout(async () => {
+                    try {
+                        const response = await fetch(RESUME_URL, { cache: "no-store" });
+                        const blob = await response.blob();
+                        const downloadUrl = URL.createObjectURL(blob);
+                        const link = document.createElement("a");
+                        link.href = downloadUrl;
+                        link.download = "Resume_AI_July2026.pdf";
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                        setTimeout(() => URL.revokeObjectURL(downloadUrl), 1000);
+                    } catch (error) {
+                        pushLine("output", "Unable to download resume right now.");
+                    }
                 }, 200);
                 break;
             case "github":

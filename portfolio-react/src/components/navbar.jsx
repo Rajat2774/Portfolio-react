@@ -91,6 +91,7 @@ function Navbar() {
                     {['Home', 'About', 'Skills', 'Experience', 'Project', 'Contact'].map((label) => {
                         const href = label === 'Home' ? '#home'
                             : label === 'Skills' ? '#tech'
+                            : label === 'Project' ? '#projects'
                             : `#${label.toLowerCase()}`;
                         return (
                             <a
@@ -159,6 +160,7 @@ function Navbar() {
                             {['Home', 'About', 'Skills', 'Experience', 'Project', 'Contact'].map((label) => {
                                 const href = label === 'Home' ? '#home'
                                     : label === 'Skills' ? '#tech'
+                                    : label === 'Project' ? '#projects'
                                     : `#${label.toLowerCase()}`;
                                 return (
                                     <a
