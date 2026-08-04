@@ -54,14 +54,6 @@ export const EXPERIENCES = [
     ],
   },
   {
-    year: "July 2025 - August 2025",
-    role: "Machine Learning Intern",
-    company: "Future Interns",
-    description:
-      "Designed and deployed AI-powered chatbots with multilingual NLP capabilities using Dialogflow and OpenAI APIs. Implemented sentiment analysis, named entity recognition, and text generation models. Delivered prototypes with 90%+ user satisfaction scores.",
-    technologies: ["Scikit-Learn", "Tensorflow", "Langchain", "NLP"],
-  },
-  {
     year: "2024 - 2026",
     role: "Design Lead",
     company: "GDG on campus Dyal Singh College",
