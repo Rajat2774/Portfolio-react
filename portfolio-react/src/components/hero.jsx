@@ -71,8 +71,10 @@ const Hero = () => {
                                 transition={{ duration: 0.6, delay: 0.5 }}
                                 src={pp}
                                 alt="Rajat Singh"
-                                className={`rounded-2xl border shadow-2xl max-w-xs lg:max-w-sm w-full object-cover ${
-                                    isDark ? 'border-neutral-800' : 'border-neutral-200'
+                                className={`rounded-2xl border-4 shadow-2xl max-w-xs lg:max-w-sm w-full object-cover transition-colors duration-300 ${
+                                    isDark
+                                        ? 'border-purple-500/40 shadow-purple-900/20 hover:border-purple-400'
+                                        : 'border-sky-400/50 shadow-sky-500/20 hover:border-sky-500'
                                 }`}
                             />
                         </div>
