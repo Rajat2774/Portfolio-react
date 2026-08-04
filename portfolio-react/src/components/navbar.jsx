@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 import logo from "../assets/logo.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faSun, faMoon, faHeart } from "@fortawesome/free-solid-svg-icons";
@@ -72,14 +72,25 @@ function LikeButton({ theme }) {
 function Navbar() {
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const { theme, toggleTheme } = useTheme();
+    const { scrollYProgress } = useScroll();
 
     return (
         <header className="fixed top-4 left-0 right-0 z-50 flex justify-center px-4">
-            <nav className={`relative flex items-center justify-between w-full max-w-5xl px-6 py-3 rounded-full border backdrop-blur-md shadow-lg transition-all duration-300 ${
+            <nav className={`relative overflow-hidden flex items-center justify-between w-full max-w-5xl px-6 py-3 rounded-full border backdrop-blur-md shadow-lg transition-all duration-300 ${
                 theme === 'dark'
                     ? 'border-neutral-800 bg-neutral-950/70 shadow-purple-500/5'
                     : 'border-neutral-200 bg-white/80 shadow-sky-500/5'
             }`}>
+                {/* scroll progress — pinned to the pill's bottom edge, same width, clipped by overflow-hidden + rounded-full above */}
+                <motion.div
+                    className={`absolute inset-x-0 bottom-0 h-[3px] origin-left ${
+                        theme === 'dark'
+                            ? 'bg-gradient-to-r from-purple-500 to-pink-500'
+                            : 'bg-gradient-to-r from-sky-400 to-cyan-400'
+                    }`}
+                    style={{ scaleX: scrollYProgress }}
+                />
+
                 <div className="flex flex-shrink-0 items-center text-2xl">
                     <a href="#home">
                         <img src={logo} alt="logo" height={40} width={40} className="rounded-full" />
@@ -91,7 +102,6 @@ function Navbar() {
                     {['Home', 'About', 'Skills', 'Experience', 'Project', 'Contact'].map((label) => {
                         const href = label === 'Home' ? '#home'
                             : label === 'Skills' ? '#tech'
-                            : label === 'Project' ? '#projects'
                             : `#${label.toLowerCase()}`;
                         return (
                             <a
@@ -160,7 +170,6 @@ function Navbar() {
                             {['Home', 'About', 'Skills', 'Experience', 'Project', 'Contact'].map((label) => {
                                 const href = label === 'Home' ? '#home'
                                     : label === 'Skills' ? '#tech'
-                                    : label === 'Project' ? '#projects'
                                     : `#${label.toLowerCase()}`;
                                 return (
                                     <a
