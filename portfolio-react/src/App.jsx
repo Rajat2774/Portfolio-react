@@ -9,7 +9,7 @@ import Contact from './components/contact';
 import DarkParticleBackground from './components/ui/DarkParticleBackground.jsx';
 import { ThemeProvider, useTheme } from './context/ThemeContext';
 import CommandTerminal from './components/Commandterminal.jsx';
-import { ScrollProgress } from './components/ui/ScrollProgress.jsx';
+
 
 function AppContent() {
   const { theme } = useTheme();
