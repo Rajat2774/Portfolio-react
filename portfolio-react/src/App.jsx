@@ -7,9 +7,10 @@ import Experience from './components/experience';
 import Projects from './components/projects';
 import Contact from './components/contact';
 import DarkParticleBackground from './components/ui/DarkParticleBackground.jsx';
+import LightGridBackground from './components/ui/LightGridBackground.jsx';
 import { ThemeProvider, useTheme } from './context/ThemeContext';
 import CommandTerminal from './components/Commandterminal.jsx';
-
+import Certificates from './components/certificates.jsx';
 
 function AppContent() {
   const { theme } = useTheme();
@@ -20,19 +21,20 @@ function AppContent() {
         ? 'bg-black text-neutral-300 selection:bg-fuchsia-300 selection:text-fuchsia-900'
         : 'bg-white text-neutral-700 selection:bg-sky-200 selection:text-sky-900'
     }`}>
-      {/* Dark particle background — lightweight & butter-smooth in dark mode */}
-      {theme === 'dark' && <DarkParticleBackground />}
+      {/* Background layer */}
+      {theme === 'dark' ? <DarkParticleBackground /> : <LightGridBackground />}
 
       {/* Content layer */}
       <div className="relative z-10">
         <Navbar/>
-        <div className='container mx-auto px-6 sm:px-10 md:px-16 lg:px-24'>
+        <div className='container mx-auto px-6 sm:px-10 md:px-16 lg:px-16 xl:px-24'>
           <Hero/>
           <About/>
           <Technologies/>
           <Experience/>
           <Projects/>
           <CommandTerminal />
+          <Certificates/>
           <Contact/>
         </div>
       </div>

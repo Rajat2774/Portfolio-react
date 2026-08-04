@@ -3,6 +3,7 @@ import { HERO } from '../constants';
 import { motion } from "motion/react";
 import { useTheme } from '../context/ThemeContext';
 
+
 const container = (delay) => ({
     hidden: { x: -100, opacity: 0 },
     visible: {
@@ -32,7 +33,7 @@ const Hero = () => {
                                 variants={container(0)}
                                 initial="hidden"
                                 animate="visible"
-                                className={`pb-6 text-6xl sm:text-7xl md:text-8xl lg:text-[6.5rem] xl:text-[7.5rem] font-extrabold tracking-tight leading-none whitespace-nowrap ${
+                                className={`pb-6 text-5xl sm:text-6xl md:text-7xl lg:text-6xl xl:text-7xl 2xl:text-[7.5rem] font-extrabold tracking-tight leading-none whitespace-nowrap ${
                                     isDark ? 'text-white' : 'text-neutral-900'
                                 }`}
                             >

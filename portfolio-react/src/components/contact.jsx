@@ -88,7 +88,7 @@ const Contact = () => {
           transition={{ duration: 0.5 }}
           className="mt-20 mb-10 flex items-center gap-4 px-4 lg:px-8 w-full max-w-4xl"
         >
-          <span className={`font-mono text-sm ${isDark ? 'text-neutral-500' : 'text-sky-400'}`}>05.</span>
+          <span className={`font-mono text-sm ${isDark ? 'text-neutral-500' : 'text-sky-400'}`}>06.</span>
           <span className={`h-px flex-1 ${isDark ? 'bg-neutral-800' : 'bg-sky-200'}`} />
         </motion.div>
 

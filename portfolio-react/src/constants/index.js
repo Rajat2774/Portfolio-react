@@ -11,6 +11,27 @@ import Spam from "../assets/spam.png";
 import frame from "../assets/frame.png";
 import lockyt from "../assets/lockyt.png";
 
+import data_science from "../assets/data science.jpg";
+import Tensorflow from "../assets/tensorflow cert.jpg";
+import GenAI from "../assets/GenAI.jpg";
+import cloud_compute from "../assets/basic of cloud compute.png";
+import cloud_storage from "../assets/getting started with cloud storage.png";
+import looker from "../assets/get started with looker.png";
+import google_workspace_tools from "../assets/google workspace tools.png";
+import dataplex from "../assets/dataplex.png";
+import cloud_speech from "../assets/cloud speech.png";
+import monitoring_cloud from "../assets/monitoring in google cloud.png";
+import cloud_vision from "../assets/cloud vision api.png";
+import network_fundamentals from "../assets/network fundamental.png";
+import prompt_design from "../assets/prompt design.png";
+import cloud_functions from "../assets/cloud functions.png";
+import app_engine from "../assets/app engine.png";
+import pub_sub from "../assets/pub sub.png";
+import generative_ai from "../assets/generative ai.png";
+import streamlit_cert from "../assets/streamlit_cert.png";
+import api_gateway from "../assets/api gateway.png";
+
+
 export const HERO = `AI/ML Engineer and Computer Science student specializing in LLMs, RAG architectures, and NLP pipelines. I build intelligent, production-ready systems — from conversational AI agents to end-to-end MLOps workflows.
 
 Proficient in Python, C++, and Java with strong DSA fundamentals. Experienced across the full stack with React, FastAPI, Django, Docker, and AWS.`;
@@ -21,6 +42,7 @@ My core focus is building systems powered by large language models, retrieval-au
 On the engineering side, I work across the full stack: React frontends, Python backends (FastAPI, Flask, Django), vector databases, and cloud infrastructure on AWS with Docker and CI/CD.
 
 Always learning, always building.`;
+
 export const EXPERIENCES = [
   {
     year: "July 2025 - August 2025",
@@ -166,3 +188,140 @@ export const SOCIAL = {
   twitter: "https://x.com/RAJAT_073?t=79ACVgXfCoWMhvVrMb3Tpw&s=09",
   insta: "https://www.instagram.com/rajat.singh.04?igsh=MW1jNmVwZXd3emEwag==",
 };
+
+
+export const CERTIFICATES = [
+    {
+        title: "Tensorflow",
+        issuer: "GeeksforGeeks",
+        date: "July 2025",
+        image: Tensorflow, 
+        link: "https://www.geeksforgeeks.org/certificate/d7377a1fd8bfb0f9a21dab3769924520?utm_source=socials&utm_medium=cc_link",   
+    },
+    {
+        title: "Data Science",
+        issuer: "GeeksforGeeks",
+        date: "July 2025",
+        image: data_science,
+        link: "https://www.geeksforgeeks.org/certificate/ec1beb00b5766aee41d50a52565d74c6?utm_source=socials&utm_medium=cc_link",
+    },
+    {
+        title: "Mastering Generative AI and ChatGPT",
+        issuer: "GeeksforGeeks",
+        date: "July 2025",
+        image: GenAI,
+        link: "https://www.geeksforgeeks.org/certificate/6fa4dc3ea92e64c3d66e6dd23b6a217b?utm_source=socials&utm_medium=cc_link",
+    },
+    {
+        title: "The Basics of Google Cloud Compute",
+        issuer: "Google Cloud",
+        date: "Oct 2,2024",
+        image: cloud_compute,
+        link: "https://www.skills.google/public_profiles/67fdbd22-9436-46f3-b74f-da3fc601fe60/badges/11820726",
+    },
+    {
+        title: "Implement Cloud Storage and Data Protection Solutions",
+        issuer: "Google Cloud",
+        date: "Oct 4, 2024",
+        image: cloud_storage,
+        link: "https://www.skills.google/public_profiles/67fdbd22-9436-46f3-b74f-da3fc601fe60/badges/11866636",
+    },
+    {
+        title: "Get Started with Looker",
+        issuer: "Google Cloud",
+        date: "Oct 5, 2024",
+        image: looker,
+        link: "https://www.skills.google/public_profiles/67fdbd22-9436-46f3-b74f-da3fc601fe60/badges/11872817",
+    },
+    {
+        title: "Implement Cloud Collaboration and Productivity Workflows",
+        issuer: "Google Cloud",
+        date: "Oct 5, 2024",
+        image: google_workspace_tools,
+        link: "https://www.skills.google/public_profiles/67fdbd22-9436-46f3-b74f-da3fc601fe60/badges/11876806",
+    },
+    {
+        title: "Get started with Dataplex",
+        issuer: "Google Cloud",
+        date: "Oct 5, 2024",
+        image: dataplex,
+        link: "https://www.skills.google/public_profiles/67fdbd22-9436-46f3-b74f-da3fc601fe60/badges/11883220",
+    },
+    {
+        title: "Cloud Speech API:3 ways",
+        issuer: "Google Cloud",
+        date: "Oct 6, 2024",
+        image: cloud_speech,
+        link: "https://www.skills.google/public_profiles/67fdbd22-9436-46f3-b74f-da3fc601fe60/badges/11889770",
+    },
+    {
+        title: "Monitoring in Google Cloud",
+        issuer: "Google Cloud",
+        date: "Oct 7, 2024",
+        image: monitoring_cloud,
+        link: "https://www.skills.google/public_profiles/67fdbd22-9436-46f3-b74f-da3fc601fe60/badges/11920094",
+    },
+    {
+        title: "Analyze Images with the Cloud Vision API",
+        issuer: "Google Cloud",
+        date: "Oct 7, 2024",
+        image: cloud_vision,
+        link: "https://www.skills.google/public_profiles/67fdbd22-9436-46f3-b74f-da3fc601fe60/badges/11920438",
+    },
+    {
+        title: "Networking Fundamentals on Google Cloud",
+        issuer: "Google Cloud",
+        date: "Oct 7, 2024",
+        image: network_fundamentals,
+        link: "https://www.skills.google/public_profiles/67fdbd22-9436-46f3-b74f-da3fc601fe60/badges/11920568",
+    },
+    {
+        title: "Prompt Design in Agent Platform",
+        issuer: "Google Cloud",
+        date: "Oct 9, 2024",
+        image: prompt_design,
+        link: "https://www.skills.google/public_profiles/67fdbd22-9436-46f3-b74f-da3fc601fe60/badges/11954131",
+    },
+    {
+        title: "Cloud Functions: 3 Ways",
+        issuer: "Google Cloud",
+        date: "Oct 9, 2024",
+        image: cloud_functions,
+        link: "https://www.skills.google/public_profiles/67fdbd22-9436-46f3-b74f-da3fc601fe60/badges/11954747",
+    },
+    {
+        title: "App Engine: 3 Ways",
+        issuer: "Google Cloud",
+        date: "Oct 9, 2024",
+        image: app_engine,
+        link: "https://www.skills.google/public_profiles/67fdbd22-9436-46f3-b74f-da3fc601fe60/badges/11955842",
+    },
+    {
+        title: "Get Started with Pub/Sub",
+        issuer: "Google Cloud",
+        date: "Oct 12, 2024",
+        image: pub_sub,
+        link: "https://www.skills.google/public_profiles/67fdbd22-9436-46f3-b74f-da3fc601fe60/badges/12005838",
+    },
+    {
+        title: "Introduction to Generative AI",
+        issuer: "Google Cloud",
+        date: "Oct 15, 2024",
+        image: generative_ai,
+        link: "https://www.skills.google/public_profiles/67fdbd22-9436-46f3-b74f-da3fc601fe60/badges/12104615",
+    },
+    {
+        title: "Develop Gen AI Apps with Gemini and Streamlit",
+        issuer: "Google Cloud",
+        date: "Oct 16, 2024",
+        image: streamlit_cert,
+        link: "https://www.skills.google/public_profiles/67fdbd22-9436-46f3-b74f-da3fc601fe60/badges/12106627",
+    },
+    {
+        title: "Get Started with API Gateway",
+        issuer: "Google Cloud",
+        date: "Oct 16, 2024",
+        image: api_gateway,
+        link: "https://www.skills.google/public_profiles/67fdbd22-9436-46f3-b74f-da3fc601fe60/badges/12124119",
+    },
+];
