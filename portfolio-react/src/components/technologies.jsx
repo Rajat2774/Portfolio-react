@@ -27,7 +27,13 @@ import Prometheus from "../assets/Prometheus.png";
 import Langchain from "../assets/Langchain.jpeg";
 import Docker from "../assets/Docker.png";
 import Tensorflow from "../assets/TensorFlow.png";
+import Langgraph from "../assets/langgraph.png";
+import Supabase from "../assets/supabase.png";
+import Firebase from "../assets/Firebase.png"
+
+
 import { useTheme } from '../context/ThemeContext';
+
 
 
 const iconVariants = (duration) => ({
@@ -45,6 +51,11 @@ const iconVariants = (duration) => ({
 
 const technologies = [
   { name: "LangChain", icon: Langchain },
+  { name: "LangGraph", icon: Langgraph },
+  { name: "C++", icon: CppIcon },
+  { name: "React", icon: ReactIcon },
+  { name: "Python", icon: pythonIcon },
+  { name: "Java", icon: Java },
   { name: "Prometheus", icon: Prometheus },
   { name: "Grafana", icon: grafana },
   { name: "Kubernetes", icon: Kubernetes },
@@ -52,14 +63,12 @@ const technologies = [
   { name: "TensorFlow", icon: Tensorflow },
   { name: "Hugging Face", icon: HF },
   { name: "FastAPI", icon: fastapi },
+  { name: "Supabase", icon: Supabase },
+  { name: "Firebase", icon: Firebase },
   { name: "Groq", icon: groq },
   { name: "MLflow", icon: mlflow },
   { name: "DVC", icon: dvc },
   { name: "Scikit-learn", icon: Sklearn },
-  { name: "C++", icon: CppIcon },
-  { name: "React", icon: ReactIcon },
-  { name: "Python", icon: pythonIcon },
-  { name: "Java", icon: Java },
   { name: "NumPy", icon: Numpy },
   { name: "Pandas", icon: Pandas },
   { name: "Matplotlib", icon: mat },
