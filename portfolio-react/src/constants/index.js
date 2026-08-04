@@ -41,6 +41,14 @@ Always learning, always building.`;
 
 export const EXPERIENCES = [
   {
+    year: "2024 - 2026",
+    role: "Design Lead",
+    company: "GDG on campus Dyal Singh College",
+    description:
+      "Leading the design team to create engaging and user-friendly experiences for the campus community.",
+    technologies: ["Canva", "Figma"],
+  },
+  {
     year: "July 2025 - August 2025",
     role: "AI and Cloud Intern",
     company: "Edunet Foundation",
@@ -52,14 +60,6 @@ export const EXPERIENCES = [
       "IBM Cloud",
       "Machine Learning",
     ],
-  },
-  {
-    year: "2024 - 2026",
-    role: "Design Lead",
-    company: "GDG on campus Dyal Singh College",
-    description:
-      "Leading the design team to create engaging and user-friendly experiences for the campus community.",
-    technologies: ["Canva", "Figma"],
   },
   {
     year: "October 2023 - 2024",
