@@ -26,6 +26,7 @@ import pub_sub from "../assets/pub sub.png";
 import generative_ai from "../assets/generative ai.png";
 import streamlit_cert from "../assets/streamlit_cert.png";
 import api_gateway from "../assets/api gateway.png";
+import chess from "../assets/chess.png";
 
 
 export const HERO = `AI/ML Engineer and Computer Science student specializing in LLMs, RAG architectures, and NLP pipelines. I build intelligent, production-ready systems — from conversational AI agents to end-to-end MLOps workflows.
@@ -83,6 +84,18 @@ export const PROJECTS = [
     metric: { label: "Render time", value: "<60s" },
     demo: "https://frameforgeai.vercel.app/",
     code: "https://github.com/Rajat2774/FrameForge",
+  },
+  {
+    title: "Chess Multiplayer",
+    image: chess,
+    tagline: "Chess Multiplayer game using Web Sockets",
+    description:
+      "A high-performance, real-time multiplayer chess web application. Built using Node.js, Express, Socket.IO, Chess.js, and Tailwind CSS.",
+    technologies: ["Node.js", "Express.js", "Socket.io","Chess.js"],
+    status: "live",
+    metric: { label: "Real-time", value: "WebSockets" },
+    demo: "https://chess-multiplayer-ncnz.onrender.com/",
+    code: "https://github.com/Rajat2774/Chess_com",
   },
   {
     title: "Lockyt",

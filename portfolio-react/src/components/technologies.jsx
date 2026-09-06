@@ -30,6 +30,11 @@ import Tensorflow from "../assets/TensorFlow.png";
 import Langgraph from "../assets/langgraph.png";
 import Supabase from "../assets/supabase.png";
 import Firebase from "../assets/Firebase.png"
+import MongoDB from "../assets/MongoDB.png";
+import express from "../assets/Express.png";
+import nodejs from "../assets/Node.js.png";
+import socketio from "../assets/Socket.io.png";
+import PostgresSQL from "../assets/PostgresSQL.png";
 
 
 import { useTheme } from '../context/ThemeContext';
@@ -52,8 +57,13 @@ const iconVariants = (duration) => ({
 const technologies = [
   { name: "LangChain", icon: Langchain },
   { name: "LangGraph", icon: Langgraph },
-  { name: "C++", icon: CppIcon },
+  { name: "Express", icon: express },
+  { name: "Node.js", icon: nodejs },
   { name: "React", icon: ReactIcon },
+  { name: "Socket.io", icon: socketio },
+  { name: "PostgreSQL", icon: PostgresSQL },
+  { name: "MongoDB", icon: MongoDB },
+  { name: "C++", icon: CppIcon },
   { name: "Python", icon: pythonIcon },
   { name: "Java", icon: Java },
   { name: "Prometheus", icon: Prometheus },
@@ -80,7 +90,7 @@ const technologies = [
   { name: "Flask", icon: flask },
   { name: "Django", icon: djangoIcon },
   { name: "Tailwind", icon: tailwindIcon },
-  { name: "SQL", icon: MysqlIcon },
+  { name: "SQL", icon: MysqlIcon }
 ];
 
 const Technologies = () => {
