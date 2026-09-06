@@ -1,4 +1,5 @@
-import pp from "../assets/about1.jpg";
+import pp from "../assets/about1.jpeg";
+import ppAscii from "../assets/about-ascii.png";
 import { HERO } from '../constants';
 import { motion } from "motion/react";
 import { useTheme } from '../context/ThemeContext';
@@ -65,18 +66,27 @@ const Hero = () => {
                     </div>
                     <div className="w-full lg:w-5/12 lg:p-8 mt-8 lg:mt-0">
                         <div className="flex justify-center lg:justify-end">
-                            <motion.img
+                            <motion.div
                                 initial={{ opacity: 0, scale: 0.95 }}
                                 animate={{ opacity: 1, scale: 1 }}
                                 transition={{ duration: 0.6, delay: 0.5 }}
-                                src={pp}
-                                alt="Rajat Singh"
-                                className={`rounded-2xl border-4 shadow-2xl max-w-xs lg:max-w-sm w-full object-cover transition-colors duration-300 ${
+                                className={`relative group rounded-2xl border-4 shadow-2xl max-w-xs lg:max-w-sm w-full overflow-hidden transition-colors duration-300 ${
                                     isDark
                                         ? 'border-purple-500/40 shadow-purple-900/20 hover:border-purple-400'
                                         : 'border-sky-400/50 shadow-sky-500/20 hover:border-sky-500'
                                 }`}
-                            />
+                            >
+                                <img
+                                    src={pp}
+                                    alt="Rajat Singh"
+                                    className="w-full h-auto object-cover transition-opacity duration-500 group-hover:opacity-0"
+                                />
+                                <img
+                                    src={ppAscii}
+                                    alt="Rajat Singh ASCII"
+                                    className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                                />
+                            </motion.div>
                         </div>
                     </div>
                 </div>
