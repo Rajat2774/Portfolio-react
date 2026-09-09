@@ -26,9 +26,9 @@ import {
 import { useTheme } from '../context/ThemeContext';
 import { SOCIAL } from '../constants';
 
-// Change this to anything unique to your site — free, no-signup counter API.
-const LIKE_KEY = "rajatsingh2774-portfolio-likes";
-const COUNTAPI_BASE = "https://countapi.mileshilliard.com/api/v1";
+const LIKE_NAMESPACE = "rajatsingh2774-portfolio";
+const LIKE_KEY = "likes";
+const COUNTAPI_BASE = "https://abacus.jasoncameron.dev";
 
 const NAV_ITEMS = [
     { label: 'Home', href: '#home', icon: faHouse },
@@ -46,7 +46,7 @@ function LikeButton({ theme }) {
     useEffect(() => {
         setLiked(localStorage.getItem("portfolio-liked") === "true");
 
-        fetch(`${COUNTAPI_BASE}/get/${LIKE_KEY}`)
+        fetch(`${COUNTAPI_BASE}/get/${LIKE_NAMESPACE}/${LIKE_KEY}`)
             .then((res) => (res.status === 404 ? { value: 0 } : res.json()))
             .then((data) => setCount(Number(data.value) || 0))
             .catch(() => setCount(0));
@@ -60,7 +60,7 @@ function LikeButton({ theme }) {
             setCount((c) => c + 1);
             localStorage.setItem("portfolio-liked", "true");
             try {
-                await fetch(`${COUNTAPI_BASE}/hit/${LIKE_KEY}`);
+                await fetch(`${COUNTAPI_BASE}/hit/${LIKE_NAMESPACE}/${LIKE_KEY}`);
             } catch {
                 // optimistic count already shown, safe to ignore
             }
@@ -69,11 +69,6 @@ function LikeButton({ theme }) {
             setLiked(false);
             setCount(next);
             localStorage.setItem("portfolio-liked", "false");
-            try {
-                await fetch(`${COUNTAPI_BASE}/set/${LIKE_KEY}?value=${next}`);
-            } catch {
-                // ignore
-            }
         }
     };
 
