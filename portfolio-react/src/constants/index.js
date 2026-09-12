@@ -6,6 +6,7 @@ import vehicle from "../assets/vehicle.png";
 import Spam from "../assets/spam.png";
 import frame from "../assets/frame.png";
 import lockyt from "../assets/lockyt.png";
+import huddle from "../assets/Huddle.png";
 
 import data_science from "../assets/data science.jpg";
 import Tensorflow from "../assets/tensorflow cert.jpg";
@@ -27,6 +28,7 @@ import generative_ai from "../assets/generative ai.png";
 import streamlit_cert from "../assets/streamlit_cert.png";
 import api_gateway from "../assets/api gateway.png";
 import chess from "../assets/chess.png";
+import oracle from "../assets/oracle.png";
 
 
 export const HERO = `AI/ML Engineer and Computer Science student specializing in LLMs, RAG architectures, and NLP pipelines. I build intelligent, production-ready systems — from conversational AI agents to end-to-end MLOps workflows.
@@ -73,6 +75,18 @@ export const EXPERIENCES = [
 ];
 
 export const PROJECTS = [
+  {
+    title: "Huddle",
+    image: huddle,
+    tagline: "Real-time conversations around shared interests",
+    description:
+      "Create a temporary room around a topic, share the link, and start a real-time conversation. Huddle makes it easy to bring people together around live matches, movies, AI and tech, debates, and any other discussion worth having. Rooms are time-boxed and close automatically when the conversation ends, making it simple to host focused, engaging discussions without clutter.",
+    technologies: ["Node.js", "React", "Socket.IO", "PostgreSQL"],
+    status: "live",
+    metric: { label: "Room creation", value: "<10 sec" },
+    demo: "https://huddle-rooms.vercel.app/",
+    code: "https://github.com/Rajat2774/Huddle",
+  },
   {
     title: "FrameForge",
     image: frame,
@@ -192,6 +206,13 @@ export const SOCIAL = {
 
 
 export const CERTIFICATES = [
+    {
+        title: "Agentic AI Certified Foundations Associate",
+        issuer: "Oracle",
+        date: "Aug 19, 2026",
+        image: oracle,
+        link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=235812538817F9F119BB2BF303ED63417BDC560A60A402765662AC0734018F16",
+    },
     {
         title: "Tensorflow",
         issuer: "GeeksforGeeks",
