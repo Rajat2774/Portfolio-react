@@ -85,7 +85,7 @@ const About = () => {
                         </p>
 
                         <motion.a
-                            href="/Resume_AI_July2026.pdf"
+                            href="/resume_rajat.pdf"
                             download
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
