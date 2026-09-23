@@ -64,9 +64,9 @@ const Certificates = () => {
                     <span className={`h-px flex-1 ${isDark ? 'bg-neutral-800' : 'bg-sky-200'}`} />
                 </motion.div>
 
-                <h1 className="mb-16 px-4 text-5xl font-extrabold tracking-tight lg:px-8 lg:text-6xl">
+                <h2 className="mb-16 px-4 text-5xl font-extrabold tracking-tight lg:px-8 lg:text-6xl">
                     Certificates
-                </h1>
+                </h2>
 
                 {/* marquee viewport */}
                 <div className="relative overflow-hidden">

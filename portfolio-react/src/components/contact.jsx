@@ -92,7 +92,7 @@ const Contact = () => {
           <span className={`h-px flex-1 ${isDark ? 'bg-neutral-800' : 'bg-sky-200'}`} />
         </motion.div>
 
-        <motion.h1
+        <motion.h2
           whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: -20 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -101,7 +101,7 @@ const Contact = () => {
         >
           Get in{" "}
           <span className={isDark ? 'text-purple-400' : 'text-sky-500'}>Touch</span>
-        </motion.h1>
+        </motion.h2>
 
         <p className={`mb-16 max-w-2xl text-center px-4 ${isDark ? 'text-neutral-400' : 'text-neutral-600'}`}>
           Have a project in mind, a question, or just want to talk tech? Fill

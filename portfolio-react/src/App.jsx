@@ -27,7 +27,7 @@ function AppContent() {
       {/* Content layer */}
       <div className="relative z-10">
         <Navbar/>
-        <div className='container mx-auto px-6 sm:px-10 md:px-16 lg:px-16 xl:px-24'>
+        <main id="main-content" className='container mx-auto px-6 sm:px-10 md:px-16 lg:px-16 xl:px-24'>
           <Hero/>
           <About/>
           <Technologies/>
@@ -36,7 +36,7 @@ function AppContent() {
           <CommandTerminal />
           <Certificates/>
           <Contact/>
-        </div>
+        </main>
       </div>
     </div>
   );

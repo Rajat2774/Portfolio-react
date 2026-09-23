@@ -118,14 +118,14 @@ const Technologies = () => {
           <span className={`h-px flex-1 ${isDark ? 'bg-neutral-800' : 'bg-sky-200'}`} />
         </motion.div>
 
-        <motion.h1
+        <motion.h2
           whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: -100 }}
           transition={{ duration: 1.5 }}
           className={`mb-20 text-center text-5xl font-extrabold tracking-tight lg:text-6xl ${isDark ? 'text-white' : 'text-neutral-900'}`}
         >
           Technologies
-        </motion.h1>
+        </motion.h2>
         
         <motion.div
           whileInView={{ opacity: 1, x: 0 }}

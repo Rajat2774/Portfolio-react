@@ -46,7 +46,7 @@ const About = () => {
                     <span className={`h-px flex-1 ${isDark ? 'bg-neutral-800' : 'bg-sky-200'}`} />
                 </motion.div>
 
-                <motion.h1
+                <motion.h2
                     initial={{ opacity: 0, y: -20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
@@ -54,7 +54,7 @@ const About = () => {
                     className={`mb-16 px-4 text-5xl font-extrabold tracking-tight lg:px-8 lg:text-6xl ${isDark ? 'text-white' : 'text-neutral-900'}`}
                 >
                     About<span className={isDark ? 'text-neutral-500' : 'text-neutral-400'}> Me</span>
-                </motion.h1>
+                </motion.h2>
 
                 <div className="flex flex-wrap gap-y-12 px-4 lg:px-8">
                     {/* left: bio text */}
